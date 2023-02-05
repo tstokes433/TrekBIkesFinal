@@ -12,7 +12,9 @@ import com.promineotech.trekbikes.TrekBikes;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.servers.Server;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -20,9 +22,11 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 @Validated
 @RequestMapping
-@OpenAPIDefinition
-
+@OpenAPIDefinition(info = @Info(title = "TrekBikes"), servers = {
+		@Server(url = "http://localhost:8080", description = "Local server")
+})
 @ApiResponse
+
 public interface CreateBikeController {
 	//CREATE has one Method CreateBike
 
