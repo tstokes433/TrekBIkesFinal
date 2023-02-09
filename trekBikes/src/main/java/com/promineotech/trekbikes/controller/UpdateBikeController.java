@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.promineotech.trekbikes.TrekBikes;
-import com.promineotech.trekbikes.entity.Trek;
+import com.promineotech.trekbikes.entity.Bike;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
@@ -23,7 +23,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 
 
 @Validated
-@RequestMapping("/TrekBikes")
+@RequestMapping("/UpdateBike")
 @OpenAPIDefinition(info = @Info(title = "Trek Bikes"), servers = {
 	@Server(url = "http://localhost:8080", description = "Local server")})
 public interface UpdateBikeController {
@@ -31,15 +31,15 @@ public interface UpdateBikeController {
 
 		// @formatter:off
 		@Operation(
-			summary = "Updates a Trek Bike",
-			description = "Updates a Trek Bike",
+			summary = "Updates a Bike",
+			description = "Updates a Bike",
 			responses = {
 				@ApiResponse(
 					responseCode = "200",
-					description = "Trek Bike information was updated successfully.",
+					description = "The Bike information was updated successfully.",
 					content = @Content(
 						mediaType = "application/json",
-						schema = @Schema(implementation = Trek.class))),
+						schema = @Schema(implementation = Bike.class))),
 				@ApiResponse(
 					responseCode = "400",
 					description = "Invalid request parameters",
@@ -86,7 +86,12 @@ public interface UpdateBikeController {
 					name = "Tire",
 					allowEmptyValue = true,
 					required = true,
-					description = "Tire Chosen")
+					description = "Tire Chosen"),
+				@Parameter(
+						name = "Bike",
+						allowEmptyValue = true,
+						required = true,
+						description = "Bike Chosen")
 	}	
 
 		)
@@ -99,7 +104,8 @@ public interface UpdateBikeController {
 				@RequestParam(required = true)String Handlebar,
 				@RequestParam(required = true)String Drivetrain,
 				@RequestParam(required = true)String Saddle,
-				@RequestParam(required = true)String Tire);
+				@RequestParam(required = true)String Tire,				
+				@RequestParam(required = true)String Bike);
 
 		// @formatter:on
 }

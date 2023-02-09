@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 
 @Validated
-@RequestMapping
+@RequestMapping("/CreateBike")
 @OpenAPIDefinition(info = @Info(title = "TrekBikes"), servers = {
 		@Server(url = "http://localhost:8080", description = "Local server")
 })
@@ -34,7 +34,7 @@ public interface CreateBikeController {
 		// @formatter:off
 		@Operation(
 			summary = "Adds a Complete Trek Bike",
-			description = "Creates a New Trek Bike with all components",
+			description = "Creates a New Bike with all components",
 			responses = {
 				@ApiResponse(
 					responseCode = "201",
@@ -88,8 +88,12 @@ public interface CreateBikeController {
 					name = "Tire",  
 					allowEmptyValue = false,
 					required = true, 
-					description = "Tires Needed for a Bike")
-							
+					description = "Tires Needed for a Bike"),
+				@Parameter(
+						name = "Bike",  
+						allowEmptyValue = false,
+						required = true, 
+						description = "Built Bike")		
 		
 			}
 		)
@@ -107,7 +111,9 @@ public interface CreateBikeController {
 				@RequestParam(required = true) 
 				String saddle,
 				@RequestParam(required = true) 
-				String tire);
+				String tire,
+				@RequestParam(required = true) 
+				String bike);
 		// @formatter:on
 }
 

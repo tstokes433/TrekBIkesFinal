@@ -3,6 +3,7 @@ package com.promineotech.trekbikes.dao;
 import java.util.Optional;
 
 import com.promineotech.trekbikes.TrekBikes;
+import com.promineotech.trekbikes.entity.Bike;
 
 public interface UpdateBikeDao {
 	
@@ -16,7 +17,7 @@ public interface UpdateBikeDao {
 	 * @param tire
 	 * @return
 	 */
-	Optional<TrekBikes> updateTrekBike(String frameset, String color, String handlebar, 
+	Optional<Bike> updateBike(String frameset, String color, String handlebar, 
 			String drivetrain, String saddle, String tire);
 
 }

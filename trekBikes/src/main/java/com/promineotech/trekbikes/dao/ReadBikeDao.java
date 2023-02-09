@@ -1,7 +1,7 @@
 package com.promineotech.trekbikes.dao;
 
 import java.util.List;
-import com.promineotech.trekbikes.TrekBikes;
+import com.promineotech.trekbikes.entity.Bike;
 
 public interface ReadBikeDao {
 
@@ -15,6 +15,6 @@ public interface ReadBikeDao {
 	 * @param tire
 	 * @return
 	 */
-	List<TrekBikes> fetchTrekBikes(String frameset, String color, String handlebar, 
+	List<Bike> fetchBike(String frameset, String color, String handlebar, 
 			String drivetrain, String saddle, String tire);
 }

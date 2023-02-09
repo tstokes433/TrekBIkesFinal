@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.promineotech.trekbikes.TrekBikes;
-import com.promineotech.trekbikes.entity.Trek;
+import com.promineotech.trekbikes.entity.Bike;
 
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -22,7 +22,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 import io.swagger.v3.oas.annotations.Parameter;
 
 @Validated
-@RequestMapping("/TrekBikes")
+@RequestMapping("/DeleteBIke")
 @OpenAPIDefinition(info = @Info(title = "TrekBikes"), servers = {
 		@Server(url = "http://localhost:8080", description = "Local server")
 })
@@ -41,7 +41,7 @@ public interface DeleteBikeController {
 				description = "Bike was deleted successfully.",
 				content = @Content(
 					mediaType = "application/json",
-					schema = @Schema(implementation = Trek.class))),
+					schema = @Schema(implementation = Bike.class))),
 			@ApiResponse(
 				responseCode = "400",
 				description = "Invalid request parameters",
@@ -89,7 +89,12 @@ public interface DeleteBikeController {
 				name = "Tire",
 				allowEmptyValue = true,
 				required = true,
-				description = "Tire Chosen")
+				description = "Tire Chosen"),
+			@Parameter(
+					name = "Bike",
+					allowEmptyValue = true,
+					required = true,
+					description = "Bike to Delete")
 		}
 	)
 		
@@ -101,7 +106,8 @@ public interface DeleteBikeController {
 		@RequestParam(required = true)String Handlebar,
 		@RequestParam(required = true)String Drivetrain,
 		@RequestParam(required = true)String Saddle,
-		@RequestParam(required = true)String Tire);
+		@RequestParam(required = true)String Tire,
+		@RequestParam(required = true)String BIke);
 	 //@formatter:on
 }
 
