@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.promineotech.trekbikes.TrekBikes;
 import com.promineotech.trekbikes.dao.CreateBikeDao;
+import com.promineotech.trekbikes.entity.Bike;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,10 +20,10 @@ public class DefaultCreateBikeService implements CreateBikeService {
 	private CreateBikeDao createBikeDao;
 	
 	@Override
-	public Optional<TrekBikes> newTrekBike(String frameset, String color, String handlebar, String drivetrain,
-			String saddle, String tire, String bike) {
+	public Optional<Bike> newBike(String frameset, String color, String handlebar, String drivetrain,
+			String saddle, String tire) {
 		log.info("newTrekBike has been called for Bike frameset={}, color={}, handlebar={},drivetrain={}, saddle={}, tire={}");
-		return createBikeDao.newTrekBike(frameset, color, handlebar, drivetrain, saddle, tire);
+		return Optional.ofNullable(createBikeDao.newBike(frameset, color, handlebar, drivetrain, saddle, tire));
 	}
 
 }

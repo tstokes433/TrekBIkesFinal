@@ -31,7 +31,7 @@ public class DefaultCreateBikeDao implements CreateBikeDao {
 	private NamedParameterJdbcTemplate jdbcTemplate;
 
 	@Override
-	public Bike saveBike(String frameset, String color, String handlebar, String drivetrain,
+	public Bike newBike(String frameset, String color, String handlebar, String drivetrain,
 			String saddle, String tire) {
 		log.info("DAO: frameset={}, color={}, handlebar={}, drivetrain={}, saddle={}, tire={}", frameset, color, handlebar, drivetrain, saddle, tire
 		

@@ -3,6 +3,7 @@ package com.promineotech.trekbikes.service;
 import java.util.Optional;
 
 import com.promineotech.trekbikes.TrekBikes;
+import com.promineotech.trekbikes.entity.Bike;
 
 public interface CreateBikeService {
 
@@ -17,6 +18,6 @@ public interface CreateBikeService {
 	 * @param tire
 	 * @return
 	 */
-	Optional<TrekBikes> newTrekBike(String frameset, String color, String handlebar, 
-			String drivetrain, String saddle, String tire, String bike);
+	Optional<Bike> newBike(String frameset, String color, String handlebar, 
+			String drivetrain, String saddle, String tire);
 }

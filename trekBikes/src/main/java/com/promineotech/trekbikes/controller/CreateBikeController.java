@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.promineotech.trekbikes.TrekBikes;
+import com.promineotech.trekbikes.entity.Bike;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
@@ -99,7 +100,7 @@ public interface CreateBikeController {
 		)
 
 
-		Optional<TrekBikes> newTrekBikes(
+		Optional<Bike> newBike(
 				@RequestParam(required = true) 
 				String frameset,
 				@RequestParam(required = true) 
@@ -111,9 +112,7 @@ public interface CreateBikeController {
 				@RequestParam(required = true) 
 				String saddle,
 				@RequestParam(required = true) 
-				String tire,
-				@RequestParam(required = true) 
-				String bike);
+				String tire);
 		// @formatter:on
 }
 

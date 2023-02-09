@@ -19,7 +19,7 @@ public interface CreateBikeDao {
 	Optional<Tire> fetchTire(String tire);
 	
 	
-	Bike saveBike(String frameset, String color, String handlebar, 
+	Bike newBike(String frameset, String color, String handlebar, 
 			String drivetrain, String saddle, String tire);
 	
 }
