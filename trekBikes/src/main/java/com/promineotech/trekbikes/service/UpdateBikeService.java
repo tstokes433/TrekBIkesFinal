@@ -1,6 +1,5 @@
 package com.promineotech.trekbikes.service;
 
-import java.util.List;
 import java.util.Optional;
 
 import com.promineotech.trekbikes.entity.Bike;

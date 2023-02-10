@@ -17,6 +17,6 @@ public interface ReadBikeService {
 	 * @param Tire
 	 * @return
 	 */
-	List<Bike> fetchBike(String Color, String Drivetrain, String Frameset, String Handlebar, String Saddle, String Tire);
+	List<Bike> fetchBike(String color, String drivetrain, String frameset, String handlebar, String saddle, String tire);
 	
 }

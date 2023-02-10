@@ -3,14 +3,10 @@ package com.promineotech.trekbikes.dao;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
-import com.promineotech.trekbikes.TrekBikes;
 import com.promineotech.trekbikes.entity.Bike;
 import com.promineotech.trekbikes.entity.Color;
 import com.promineotech.trekbikes.entity.Drivetrain;

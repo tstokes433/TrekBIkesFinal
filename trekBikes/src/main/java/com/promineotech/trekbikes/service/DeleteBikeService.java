@@ -17,6 +17,6 @@ public interface DeleteBikeService {
 	 * @return
 	 */
 	
-	Optional<Bike> deleteBike(String Color, String Drivetrain, String Frameset, String Handlebar, String Saddle, String Tire);
+	Optional<Bike> deleteBike(String color, String drivetrain, String frameset, String handlebar, String saddle, String tire);
 	
 }
