@@ -4,9 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
-import com.promineotech.trekbikes.TrekBikes;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+
 import com.promineotech.trekbikes.entity.Bike;
 
 public class DefaultDeleteBikeDao implements DeleteBikeDao {
@@ -26,7 +27,12 @@ public class DefaultDeleteBikeDao implements DeleteBikeDao {
 	// @formatter:on
 	
 	Map<String, Object> params = new HashMap<>();
-	params.put("bike", bike);
+	params.put("frameset", frameset);
+	params.put("color", color);
+	params.put("handlebar", handlebar);
+	params.put("drivetrain", drivetrain);
+	params.put("saddle", saddle);
+	params.put("tire", tire);
 
 	jdbcTemplate.update(sql, params);
 	return Optional.ofNullable(Bike

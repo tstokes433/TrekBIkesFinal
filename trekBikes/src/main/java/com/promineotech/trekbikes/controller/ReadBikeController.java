@@ -100,14 +100,13 @@ public interface ReadBikeController {
 		@ResponseStatus(code = HttpStatus.OK)
 //		Order createOrder(@Valid @RequestBody OrderRequest orderRequest);
 
-		List<TrekBikes> fetchTrekBikes(
+		List<Bike> fetchBike(
 				@RequestParam(required = false) String frameset,
 				@RequestParam(required = false) String color,
 				@RequestParam(required = false) String drivetrain,
 				@RequestParam(required = false) String handlebar,
 				@RequestParam(required = false) String saddle,
-				@RequestParam(required = false) String tire,
-				@RequestParam(required = false) String bike);	
+				@RequestParam(required = false) String tire);	
 		
 		//@formatter:on
 
@@ -403,50 +402,50 @@ public interface ReadBikeController {
 		
 		//@formatter:on
 		
-		// Method for Bike
-		//@formatter:off
-		@Operation(
-			summary = "Returns a list of Bikes",
-			description = "Returns a list of Bikes",
-			responses = {
-				
-				@ApiResponse(responseCode = "200", 
-						description = "The list of Bikes is returned", 
-						content = @Content(
-						mediaType = "application/json", 
-						schema = @Schema(
-						implementation = TrekBikes.class))),
-				
-				@ApiResponse(responseCode = "400", 
-						description = "The request parameters are invalid", 
-						content = @Content(
-						mediaType = "application/json")),
-				
-				@ApiResponse(responseCode = "404",  
-						description = "No Bikes were found with the input criteria", 
-						content = @Content(
-						mediaType = "application/json")),
-				
-				@ApiResponse(responseCode = "500",  
-						description = "An unplanned error occured.", 
-						content = @Content(
-						mediaType = "application/json"))
-			},
-	//Do i need a parameter for each Entity???		
-			parameters = { 
-				@Parameter(
-						name = "Bike",  
-						required = false, 
-						description = "The Bike")
-			}
-		)
-		@GetMapping(value = "/fetchTrekBikes")
-		@ResponseStatus(code = HttpStatus.OK)
-//		Order createOrder(@Valid @RequestBody OrderRequest orderRequest);
-
-		List<Bike> fetchBike(
-				@RequestParam(required = false) String bike);	
-		
-		//@formatter:on	
+//		// Method for Bike
+//		//@formatter:off
+//		@Operation(
+//			summary = "Returns a list of Bikes",
+//			description = "Returns a list of Bikes",
+//			responses = {
+//				
+//				@ApiResponse(responseCode = "200", 
+//						description = "The list of Bikes is returned", 
+//						content = @Content(
+//						mediaType = "application/json", 
+//						schema = @Schema(
+//						implementation = TrekBikes.class))),
+//				
+//				@ApiResponse(responseCode = "400", 
+//						description = "The request parameters are invalid", 
+//						content = @Content(
+//						mediaType = "application/json")),
+//				
+//				@ApiResponse(responseCode = "404",  
+//						description = "No Bikes were found with the input criteria", 
+//						content = @Content(
+//						mediaType = "application/json")),
+//				
+//				@ApiResponse(responseCode = "500",  
+//						description = "An unplanned error occured.", 
+//						content = @Content(
+//						mediaType = "application/json"))
+//			},
+//	//Do i need a parameter for each Entity???		
+//			parameters = { 
+//				@Parameter(
+//						name = "Bike",  
+//						required = false, 
+//						description = "The Bike")
+//			}
+//		)
+//		@GetMapping(value = "/fetchTrekBikes")
+//		@ResponseStatus(code = HttpStatus.OK)
+////		Order createOrder(@Valid @RequestBody OrderRequest orderRequest);
+//
+//		List<Bike> fetchBike(
+//				@RequestParam(required = false) String bike);	
+//		
+//		//@formatter:on	
 	}
 

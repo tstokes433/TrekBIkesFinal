@@ -1,6 +1,5 @@
 package com.promineotech.trekbikes.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.validation.annotation.Validated;
@@ -16,7 +15,6 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.servers.Server;
-import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -89,12 +87,7 @@ public interface CreateBikeController {
 					name = "Tire",  
 					allowEmptyValue = false,
 					required = true, 
-					description = "Tires Needed for a Bike"),
-				@Parameter(
-						name = "Bike",  
-						allowEmptyValue = false,
-						required = true, 
-						description = "Built Bike")		
+					description = "Tires Needed for a Bike")		
 		
 			}
 		)

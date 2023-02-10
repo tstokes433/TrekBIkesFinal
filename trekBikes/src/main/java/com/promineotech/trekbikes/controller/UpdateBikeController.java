@@ -39,7 +39,7 @@ public interface UpdateBikeController {
 					description = "The Bike information was updated successfully.",
 					content = @Content(
 						mediaType = "application/json",
-						schema = @Schema(implementation = Bike.class))),
+						schema = @Schema(implementation = TrekBikes.class))),
 				@ApiResponse(
 					responseCode = "400",
 					description = "Invalid request parameters",
@@ -58,54 +58,48 @@ public interface UpdateBikeController {
 			},
 					parameters = {
 				@Parameter(
-					name = "Frameset",
+					name = "frameset",
 					allowEmptyValue = false,
 					required = true,
 					description = "Frameset chosen for bike"),
 				@Parameter(
-					name = "Color",
+					name = "color",
 					allowEmptyValue = false,
 					required = true,
 					description = "Color chosen for Handlebar"),
 				@Parameter(
-					name = "Handlebar",
+					name = "handlebar",
 					allowEmptyValue = false,
 					required = true,
 					description = "Handlebar chosen"),
 				@Parameter(
-					name = "Drivetrain",
+					name = "drivetrain",
 					allowEmptyValue = false,
 					required = true,
 					description = "Drivetrain chosen"),
 				@Parameter(
-					name = "Saddle",
+					name = "saddle",
 					allowEmptyValue = false,
 					required = true,
 					description = "Saddle chosen"),
 				@Parameter(
-					name = "Tire",
+					name = "tire",
 					allowEmptyValue = true,
 					required = true,
-					description = "Tire Chosen"),
-				@Parameter(
-						name = "Bike",
-						allowEmptyValue = true,
-						required = true,
-						description = "Bike Chosen")
+					description = "Tire Chosen")
 	}	
 
 		)
 
 		@PutMapping
 		@ResponseStatus(code = HttpStatus.OK)
-		Optional<TrekBikes> updateTrekBikes(
-				@RequestParam(required = true)String Frameset,
-				@RequestParam(required = true)String Color,
-				@RequestParam(required = true)String Handlebar,
-				@RequestParam(required = true)String Drivetrain,
-				@RequestParam(required = true)String Saddle,
-				@RequestParam(required = true)String Tire,				
-				@RequestParam(required = true)String Bike);
+		Optional<Bike> updateBike(
+				@RequestParam(required = true)String frameset,
+				@RequestParam(required = true)String color,
+				@RequestParam(required = true)String handlebar,
+				@RequestParam(required = true)String drivetrain,
+				@RequestParam(required = true)String saddle,
+				@RequestParam(required = true)String tire);
 
 		// @formatter:on
 }

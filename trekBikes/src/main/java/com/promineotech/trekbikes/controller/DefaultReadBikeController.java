@@ -21,8 +21,8 @@ public class DefaultReadBikeController implements ReadBikeController {
 	private ReadBikeService readBikeService;
 	
 	@Override
-	public List<TrekBikes> fetchTrekBikes(String frameset, String color, String drivetrain, String handlebar,
-			String saddle, String tire, String bike) {
+	public List<Bike> fetchBike(String frameset, String color, String drivetrain, String handlebar,
+			String saddle, String tire) {
 		return null;
 	}
 
@@ -60,10 +60,6 @@ public class DefaultReadBikeController implements ReadBikeController {
 	public List<Tire> fetchTire(String tire) {
 		// TODO Auto-generated method stub
 		return null;
-	}
-	@Override
-	public List<Bike> fetchBike(String bike) {
-		// TODO Auto-generated method stub
-		return null;
+
 	}
 }

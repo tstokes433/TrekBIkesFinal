@@ -1,15 +1,18 @@
 package com.promineotech.trekbikes.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.tree.RowMapper;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import com.promineotech.trekbikes.TrekBikes;
 import com.promineotech.trekbikes.entity.Bike;
 
 import lombok.extern.slf4j.Slf4j;
@@ -34,12 +37,17 @@ private NamedParameterJdbcTemplate jdbcTemplate;
 	// @formatter:on
 	
 	Map<String, Object> params = new HashMap<>();
-	params.put("bike", bike);
+	params.put("frameset", frameset);
+	params.put("color", color);
+	params.put("handlebar", handlebar);
+	params.put("drivetrain", drivetrain);
+	params.put("saddle", saddle);
+	params.put("tire", tire);
 
 	
-	return jdbcTemplate.query(sql, params, new RowMapper<>() {
+	return jdbcTemplate.query(sql, params, new RowMapper<>(){
 		@Override
-		public Bike mapRow(Resultset.rs, String ) throws SQLException {
+		public Bike mapRow(ResultSet rs, int rowNum) throws SQLException {
 			// @formatter:off
 			return Bike
 					.builder()
@@ -52,6 +60,6 @@ private NamedParameterJdbcTemplate jdbcTemplate;
 					.build();
 			// formatter:on
 		}
-	}
+	});
 	}
 }

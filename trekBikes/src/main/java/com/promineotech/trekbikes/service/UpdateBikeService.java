@@ -20,6 +20,6 @@ public interface UpdateBikeService {
 	 * @return
 	 */
 	
-	Optional<Bike> updateBike(String Color, String Drivetrain, String Frameset, String Handlebar, String Saddle, String Tire);
+	Optional<Bike> updateBike(String color, String drivetrain, String frameset, String handlebar, String saddle, String tire);
 	
 }

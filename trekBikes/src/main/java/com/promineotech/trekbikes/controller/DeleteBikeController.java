@@ -41,7 +41,7 @@ public interface DeleteBikeController {
 				description = "Bike was deleted successfully.",
 				content = @Content(
 					mediaType = "application/json",
-					schema = @Schema(implementation = Bike.class))),
+					schema = @Schema(implementation = TrekBikes.class))),
 			@ApiResponse(
 				responseCode = "400",
 				description = "Invalid request parameters",
@@ -89,25 +89,18 @@ public interface DeleteBikeController {
 				name = "Tire",
 				allowEmptyValue = true,
 				required = true,
-				description = "Tire Chosen"),
-			@Parameter(
-					name = "Bike",
-					allowEmptyValue = true,
-					required = true,
-					description = "Bike to Delete")
+				description = "Tire Chosen")
 		}
 	)
 		
 	@DeleteMapping
 	@ResponseStatus(code = HttpStatus.OK)
-	Optional<TrekBikes> deleteTrekBikes(
+	Optional<Bike> deleteBike(
 		@RequestParam(required = true)String Frameset,
 		@RequestParam(required = true)String Color,
 		@RequestParam(required = true)String Handlebar,
 		@RequestParam(required = true)String Drivetrain,
 		@RequestParam(required = true)String Saddle,
-		@RequestParam(required = true)String Tire,
-		@RequestParam(required = true)String BIke);
-	 //@formatter:on
+		@RequestParam(required = true)String Tire);
 }
 

@@ -33,14 +33,15 @@ public class DefaultCreateBikeDao implements CreateBikeDao {
 	@Override
 	public Bike newBike(String frameset, String color, String handlebar, String drivetrain,
 			String saddle, String tire) {
-		log.info("DAO: frameset={}, color={}, handlebar={}, drivetrain={}, saddle={}, tire={}", frameset, color, handlebar, drivetrain, saddle, tire
+		log.info("DAO: frameset={}, color={}, handlebar={}, drivetrain={}, saddle={}, tire={}", frameset, color, handlebar, drivetrain, saddle, tire);
 		
 		// @formatter:off
 		String sql = ""
 				+ "INSERT INTO bike ("
 				+ "frameset, color, handlebar, drivetrain, saddle, tire"
 				+ ") VALUES ("
-				+ ":frameset, :color, :handlebar, :drivetrain, :saddle, :tire;";
+				+ ":frameset, :color, :handlebar, :drivetrain, :saddle, :tire;"
+				+ ")";
 		// @formatter:on
 		
 		Map<String, Object> params = new HashMap<>();
@@ -51,6 +52,8 @@ public class DefaultCreateBikeDao implements CreateBikeDao {
 		params.put("saddle", saddle);
 		params.put("tire", tire);
 		
+		
+
 		jdbcTemplate.update(sql, params);
 		return Bike.builder()
 			// @formatter:off
