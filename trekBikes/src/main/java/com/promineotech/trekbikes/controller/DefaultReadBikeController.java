@@ -32,38 +32,38 @@ public class DefaultReadBikeController implements ReadBikeController {
 
 	@Override
 	public List<Frameset> fetchFrameset(String frameset) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("frameset={}, color={}, drivetrain={}, handlebar={}, saddle={}, tire={}", frameset);
+		return readBikeService.fetchFrameset(frameset);
 	}
 
 	@Override
 	public List<Color> fetchColor(String color) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("frameset={}, color={}, drivetrain={}, handlebar={}, saddle={}, tire={}", color);
+		return readBikeService.fetchColor(color);
 	}
 
 	@Override
 	public List<Drivetrain> fetchDrivetrain(String drivetrain) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("frameset={}, color={}, drivetrain={}, handlebar={}, saddle={}, tire={}", drivetrain);
+		return readBikeService.fetchDrivetrain(drivetrain);
 	}
 
 	@Override
 	public List<Handlebar> fetchHandlebar(String handlebar) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("frameset={}, color={}, drivetrain={}, handlebar={}, saddle={}, tire={}", handlebar);
+		return readBikeService.fetchHandlebar(handlebar);
 	}
 
 	@Override
 	public List<Saddle> fetchSaddle(String saddle) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("frameset={}, color={}, drivetrain={}, handlebar={}, saddle={}, tire={}", saddle);
+		return readBikeService.fetchSaddle(saddle);
 	}
 
 	@Override
 	public List<Tire> fetchTire(String tire) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("frameset={}, color={}, drivetrain={}, handlebar={}, saddle={}, tire={}", tire);
+		return readBikeService.fetchTire(tire);
 
 	}
 }

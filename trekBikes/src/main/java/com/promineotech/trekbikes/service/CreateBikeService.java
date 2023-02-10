@@ -2,7 +2,6 @@ package com.promineotech.trekbikes.service;
 
 import java.util.Optional;
 
-import com.promineotech.trekbikes.TrekBikes;
 import com.promineotech.trekbikes.entity.Bike;
 
 public interface CreateBikeService {
